@@ -1,9 +1,5 @@
-@extends('template.index')
-@section('title')
-    Tambah Kategori
-@endsection
 
-@section('content')
+
 <!--**********************************
             Content body start
         ***********************************-->
@@ -33,15 +29,19 @@
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="{{route('save.kategori')}}" method="post">
+                                    <form action="{{ route('simulasi.store') }}" method="post">
                                         @csrf
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <input type="text" name="nama_kategori" class="form-control">
+                                                <label for="kode_barang">Kode Barang:</label>
+                                                <input type="text" name="kode_barang" class="form-control" required>
                                             </div>
-    
+                                            <div class="form-group col-md-6">
+                                                <label for="nilai_komoditas">Nilai Komoditas:</label>
+                                                <input type="text" name="nilai_komoditas" class="form-control" required>
+                                            </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Tambah</button>
+                                        <button type="submit" class="btn btn-primary">Simpan</button>
                                     </form>
                                 </div>
                             </div>
@@ -50,5 +50,4 @@
                 </div>
             </div>
         </div>
-@endsection
                         

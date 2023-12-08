@@ -87,21 +87,21 @@
                                         <tbody>
                                             {{-- @foreach ($kategori as $item) --}}
                                             <tr>
-                                                {{-- <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $item->nama_kategori }}</td> --}}
-                                                {{-- <td>
-                                                        <a href="{{ route('edit.kategori', $item->id_kategori) }}"
-                                                            class="btn btn-success"><i class="fa fa-edit"></i></a>
-                                                        <a href="{{ route('delete.kategori', $item->id_kategori) }}"
-                                                            onclick="return confirm('Apakah anda yakin ingin menghapus data?')"
-                                                            class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                                    </td> --}}
+                                                @if(isset($simulasi))
+                                                <p>Id Simulasi: {{ $simulasi->id_simulasi }}</p>
+                                                <p>Kode Barang: {{ $simulasi->kode_barang }}</p>
+                                                <p>Uraian Barang: {{ $simulasi->uraian_barang }}</p>
+                                                <p>Bm: {{ $simulasi->bm }}</p>
+                                                <p>Nilai Komoditas: {{ $simulasi->nilai_komoditas }}</p>
+                                                <p>Nilai BM: {{ $simulasi->nilai_bm }}</p>
+                                                <p>Waktu Insert: {{ $simulasi->waktu_insert }}</p>
+                                            @endif
                                             </tr>
                                             {{-- @endforeach --}}
                                         </tbody>
                                     </table>
                                     <br>
-                                    <a href="" class="btn btn-primary"><i
+                                    <a href="/create-impor" class="btn btn-primary"><i
                                             class="fa fa-plus"></i>
                                         Tambah Data</a>
                                 </div>

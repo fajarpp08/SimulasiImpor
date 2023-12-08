@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ImporController;
+use App\Http\Controllers\SimulasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('/data-impor', [ImporController::class, 'index']);
-Route::post('create-impor', [ImporController::class, 'create']);
-Route::post('create-impor', [ImporController::class, 'store']);
+// Route::get('/data-impor', [ImporController::class, 'index']);
+// Route::post('create-impor', [ImporController::class, 'create']);
+// Route::resource('impor', ImporController::class);
+
+Route::get('/input-form', [SimulasiController::class, 'inputForm']);
+Route::post('/simulasi', [SimulasiController::class, 'simulasi'])->name('simulasi');
+Route::get('/hasil-simulasi/{id_simulasi}', [SimulasiController::class, 'hasilSimulasi'])->name('hasil_simulasi');
