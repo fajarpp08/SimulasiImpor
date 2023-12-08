@@ -11,7 +11,7 @@ class CreateSimulasisTable extends Migration
         Schema::create('simulasis', function (Blueprint $table) {
             $table->uuid('id_simulasi')->primary(); // Gunakan UUID sebagai primary key
             $table->string('kode_barang', 8);
-            $table->string('uraian_barang', 200)->nullable();
+            $table->string('uraian_barang',200)->nullable();
             $table->integer('bm')->nullable();
             $table->float('nilai_komoditas');
             $table->float('nilai_bm');
